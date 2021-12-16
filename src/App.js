@@ -20,7 +20,7 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
   const [appoidate , setAppoiDate] = useState('');
 
   const initLine = () => {
-    liff.init({ liffId : "1655945045-NpP9E2aG"}, () => {
+    liff.init({ liffId : "1656730001-Gv2VMYDo"}, () => {
       if (liff.isLoggedIn() ){
         runApp();
       }else{
