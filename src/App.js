@@ -12,12 +12,12 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
   const [email , setEmail] = useState('');
   const [phone, setPhone] = useState('');
 
-  const [sel1, setSel1] = useState('');
-  const [sel2, setSel2] = useState('');
-  const [sel3, setSel3] = useState('');
-  const [sel4, setSel4] = useState('');
-  const [notes, setNotes] = useState('');
-  const [appoidate , setAppoiDate] = useState('');
+  const [sel1, setSel1] = useState('');//subject
+  const [desc, setDesc] = useState('');
+  //phone
+  const [kemail , setKEmail] = useState('');
+  const [whocall , setWhoCall] = useState('');
+  const [sel3, setSel3] = useState('');//plant or warehouse location
 
   const initLine = () => {
     liff.init({ liffId : "1656730001-Gv2VMYDo"}, () => {
@@ -45,8 +45,8 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
   },  []);
 
   function postData(){
-    let data = {userId , pictureUrl , displayName ,os , lang ,email , phone , sel1 , sel2 , sel3 , sel4, notes , appoidate}
-    fetch("https://script.google.com/macros/s/AKfycbyyTEHQ_uZhQQwFwy7k9mFkWkUWlJ7KQlbdvRf5mMDXpcnxtWci/exec",{
+    let data = {userId , pictureUrl , displayName ,os , lang ,email , phone , sel1 , desc , kemail , whocall , sel3 }
+    fetch("",{
       method: "POST",
       body: JSON.stringify(data)
     }).then(liff.closeWindow())
@@ -66,7 +66,7 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
         <div class="card-body">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <label class="input-group-text" for="inputGroupSelect01">*รุ่นรถยนต์ของท่าน</label>
+              <label class="input-group-text" for="inputGroupSelect01">*ปัญหาด้านใด</label>
             </div>
             
             <select class="custom-select" id="inputGroupSelect01" required value={sel1} onChange={e=>setSel1(e.target.value)}>
@@ -87,74 +87,10 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon3">*วันที่สะดวกเข้า</span>
+              <span class="input-group-text" id="basic-addon1">อธิบายปัญหา</span>
             </div>
-            <input type="date" value= {appoidate} class="form-control" placeholder="yyyy-mm-dd" aria-describedby="basic-addon3" onChange={(e) =>{setAppoiDate(e.target.value)} }/>
+            <input type="text" value={desc} class="form-control" placeholder="อธิบายเพื่อให้เราเข้าใจปัญหา" aria-describedby="basic-addon1" onChange={(e) =>{setDesc(e.target.value)} }/>
           </div> 
-
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <label class="input-group-text" for="inputGroupSelect02">*เลขกิโลเมตรของรถ</label>
-            </div>
-            <select class="custom-select" id="inputGroupSelect02" required value={sel2} onChange={e=>setSel2(e.target.value)}>
-              <option selected disabled value="">เลือก...</option>
-              <option value="10000">0-10000</option>
-              <option value="20000">10001-20000</option>
-              <option value="30000">20001-30000</option>
-              <option value="40000">30001-40000</option>
-              <option value="50000">40001-50000</option>
-              <option value="60000">50001-60000</option>
-              <option value="70000">60001-70000</option>
-              <option value="80000">70001-80000</option>
-              <option value="90000">80001-90000</option>
-              <option value="100000">90001-100000</option>
-              <option value="110000">100001-110000</option>
-              <option value="120000">110001-120000</option>
-              <option value="130000">120001-130000</option>
-              <option value="140000">130001-140000</option>
-              <option value="150000">140001-150000</option>
-              <option value="160000">150001-160000</option>
-              <option value="170000">160001-170000</option>
-              <option value="180000">170001-180000</option>
-              <option value="190000">180001-190000</option>
-              <option value="200000">more 200000</option>
-            </select>
-          </div>
-
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <label class="input-group-text" for="inputGroupSelect03">*รับบริการเรื่อง</label>
-            </div>
-            <select class="custom-select" id="inputGroupSelect03" required value={sel3} onChange={e=>setSel3(e.target.value)}>
-              <option selected disabled value="">เลือก...</option>
-              <option value="Maintenance">เช็ครถตามระยะ</option>
-              <option value="EngineOil">ถ่ายน้ำมันเครื่อง</option>
-              <option value="TransmissionOil">ถ่ายน้ำมันเกียร์และเฟืองท้าย</option>
-              <option value="Suspension">ซ่อมช่วงล่าง</option> 
-              <option value="Interior">ตรวจสอบภายนอกรถ</option> 
-              <option value="Exterior">ตรวจสอบภายในรถ</option>
-
-            </select>
-          </div>
-
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <label class="input-group-text" for="inputGroupSelect04">เสริมด้วยเรื่อง</label>
-            </div>
-            <select class="custom-select" id="inputGroupSelect04" value={sel4} onChange={e=>setSel4(e.target.value)}>
-              <option selected disabled value="">เลือก...</option>
-              <option value="Wheels">ตรวจล้อ</option>
-              <option value="Headlight">ไฟหน้าและไฟเบรค</option>
-            </select>
-          </div>
-
-
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">ฝากบอกช่าง</span>
-            </div>
-            <input type="text" value={notes} class="form-control" placeholder="สิ่งที่อธิบายช่าง" aria-describedby="basic-addon1" onChange={(e) =>{setNotes(e.target.value)} }/>
-          </div>       
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -162,6 +98,39 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
             </div>
             <input type="tel" required value= {phone} class="form-control" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="0812345678" aria-describedby="basic-addon2" onChange={(e) =>{setPhone(e.target.value)} }/>
           </div> 
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">ชื่อผู้แจ้ง</span>
+            </div>
+            <input type="text" value={whocall} class="form-control" placeholder="ชื่อเล่นชื่อจริงได้หมด" aria-describedby="basic-addon1" onChange={(e) =>{setWhoCall(e.target.value)} }/>
+          </div> 
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">อีเมล์เพื่อติดต่อ</span>
+            </div>
+            <input type="text" value={kemail} class="form-control" placeholder="ที่เป็น kerrylogistics.com นะ" aria-describedby="basic-addon1" onChange={(e) =>{setKEmail(e.target.value)} }/>
+          </div> 
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect03">*สำนักงานที่แจ้ง</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect03" required value={sel3} onChange={e=>setSel3(e.target.value)}>
+              <option selected disabled value="">เลือก...</option>
+              <option value="KLCLC">KLCLC</option>
+              <option value="KRLC">KRLC</option>
+
+            </select>
+          </div>
+
+
+
+
+      
+
+
 
 
 
