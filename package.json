@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@liff/is-api-available": "^2.18.0",
+    "@line/liff": "2.18.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "tslib": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
