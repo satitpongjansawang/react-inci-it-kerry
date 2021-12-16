@@ -101,16 +101,16 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">ชื่อผู้แจ้ง</span>
+              <span class="input-group-text" id="basic-addon3">ชื่อผู้แจ้ง</span>
             </div>
-            <input type="text" value={whocall} class="form-control" placeholder="ชื่อเล่นชื่อจริงได้หมด" aria-describedby="basic-addon1" onChange={(e) =>{setWhoCall(e.target.value)} }/>
+            <input type="text" value={whocall} class="form-control" placeholder="ชื่อเล่นชื่อจริงได้หมด" aria-describedby="basic-addon3" onChange={(e) =>{setWhoCall(e.target.value)} }/>
           </div> 
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">อีเมล์เพื่อติดต่อ</span>
+              <span class="input-group-text" id="basic-addon4">อีเมล์เพื่อติดต่อ</span>
             </div>
-            <input type="text" value={kemail} class="form-control" placeholder="ที่เป็น kerrylogistics.com นะ" aria-describedby="basic-addon1" onChange={(e) =>{setKEmail(e.target.value)} }/>
+            <input type="text" value={kemail} class="form-control" placeholder="ที่เป็น kerrylogistics.com นะ" aria-describedby="basic-addon4" onChange={(e) =>{setKEmail(e.target.value)} }/>
           </div> 
 
           <div class="input-group mb-3">
