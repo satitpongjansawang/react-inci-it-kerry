@@ -46,7 +46,7 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
 
   function postData(){
     let data = {userId , pictureUrl , displayName ,os , lang ,email , phone , sel1 , desc , kemail , whocall , sel3 }
-    fetch("",{
+    fetch("https://script.google.com/macros/s/AKfycbwiwxU_4a1pyN8O6LEDINFbcWch1jbdOrVpwwANgjjCEQAb1Dg/exec",{
       method: "POST",
       body: JSON.stringify(data)
     }).then(liff.closeWindow())
