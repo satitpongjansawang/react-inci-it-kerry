@@ -116,7 +116,7 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
               <option selected disabled value="">เลือก...</option>
               <option value="KLCLC">KLCLC</option>
               <option value="KRLC">KRLC</option>
-
+              <option value="KELLOGG_ONSITE">Kerry ที่ Kellogg</option>
             </select>
           </div>
 
