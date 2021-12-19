@@ -71,17 +71,12 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
             
             <select class="custom-select" id="inputGroupSelect01" required value={sel1} onChange={e=>setSel1(e.target.value)}>
               <option selected disabled value="">เลือก...</option>
-              <option value="mazda2_sedan">Mazda 2 4 ประตู</option>
-              <option value="mazda2_hatchback">Mazda 2 5 ประตู</option>
-              <option value="mazda3_sedan">Mazda 3 4 ประตู</option>
-              <option value="mazda3_fastback">Mazda 3 5 ประตู</option>
-              <option value="bt50">BT-50</option>
-              <option value="bt50_pro">BT-50 Pro</option>
-              <option value="cx-3">CX-3</option>
-              <option value="cx-30">CX-30</option>
-              <option value="cx-5">CX-5</option>
-              <option value="cx-8">CX-8</option>
-              <option value="mx-5">MX-5</option>
+              <option value="MoLogCanNotAccess">โปรแกรม MoLog เปิดใช้งานไม่ได้</option>
+              <option value="MoLogCanNotPrint">โปรแกรม MoLog ปริ้นไม่ได้</option>
+              <option value="MoLogIncorrectLogic">โปรแกรม MoLog แสดงข้อมูลผิดพลาด</option>
+              <option value="MoLogNeedModReport">ปรับปรุงหน้าตารายงาน MoLog ให้หน่อย</option>
+              <option value="MoLogElse">อื่นๆ</option>
+              
             </select>
           </div>
 
@@ -110,7 +105,7 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon4">อีเมล์เพื่อติดต่อ</span>
             </div>
-            <input type="text" value={kemail} class="form-control" placeholder="ที่เป็น kerrylogistics.com นะ" aria-describedby="basic-addon4" onChange={(e) =>{setKEmail(e.target.value)} }/>
+            <input type="email" value={kemail} class="form-control" placeholder="ที่เป็น kerrylogistics.com นะ" aria-describedby="basic-addon4" onChange={(e) =>{setKEmail(e.target.value)} }/>
           </div> 
 
           <div class="input-group mb-3">
