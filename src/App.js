@@ -19,7 +19,7 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
   const [whocall , setWhoCall] = useState('');
   const [sel3, setSel3] = useState('');//plant or warehouse location
 
-  const [events , setEvents] = useState({"type": "postIncident"});
+  const [events , setEvents] = useState([{"type": "postIncident"}]);
 
   const initLine = () => {
     liff.init({ liffId : "1656730001-Gv2VMYDo"}, () => {
