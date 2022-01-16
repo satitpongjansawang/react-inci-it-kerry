@@ -19,7 +19,7 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
   const [whocall , setWhoCall] = useState('');
   const [sel3, setSel3] = useState('');//plant or warehouse location
 
-  const [postIncident , setpostIncident] = useState('postIncident');
+  const [postEvent , setPostEvent] = useState({events : [{"type": "postIncident"}]});
 
   const initLine = () => {
     liff.init({ liffId : "1656730001-Gv2VMYDo"}, () => {
@@ -47,9 +47,9 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
   },  []);
 
   function postData(){
-    setpostIncident({"events": [{"type": "postIncident"}] });
 
-    let data = {postIncident , userId , pictureUrl , displayName ,os , lang ,email , phone , sel1 , desc , kemail , whocall , sel3 }
+
+    let data = {postEvent , userId , pictureUrl , displayName ,os , lang ,email , phone , sel1 , desc , kemail , whocall , sel3 }
     fetch("https://script.google.com/macros/s/AKfycbwiwxU_4a1pyN8O6LEDINFbcWch1jbdOrVpwwANgjjCEQAb1Dg/exec",{
       method: "POST",
       body: JSON.stringify(data)
