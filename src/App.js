@@ -39,7 +39,7 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
       setEmail(liff.getDecodedIDToken().email);
       setOS(liff.getOS());
       setLang(liff.getLanguage());
-      setEvents({"type":"postIncident"});
+      setEvents([{"type":"postIncident"}]);
     }).catch(err => console.error(err));
   }
 
