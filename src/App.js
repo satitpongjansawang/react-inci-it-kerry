@@ -47,10 +47,7 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
   },  []);
 
   function postData(){
-    setpostIncident({"events": [{
-        "type": "postIncident",
-      }]
-    });
+    setpostIncident({"events": [{"type": "postIncident"}] });
 
     let data = {postIncident , userId , pictureUrl , displayName ,os , lang ,email , phone , sel1 , desc , kemail , whocall , sel3 }
     fetch("https://script.google.com/macros/s/AKfycbwiwxU_4a1pyN8O6LEDINFbcWch1jbdOrVpwwANgjjCEQAb1Dg/exec",{
