@@ -54,7 +54,7 @@ function App() {//LINE_UserID	pictureUrl	displayname	os	language	email	phone
         "userId": "U3c28a70ed7c5e7ce2...",
         "type": "user"
       },
-      "timestamp": 1546848285013,
+      "timestamp": "1546848285013",
       "message": {
         "type": "text",
         "id": "9141452766858",
